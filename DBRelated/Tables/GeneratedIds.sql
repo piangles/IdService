@@ -1,0 +1,12 @@
+USE BackboneTier3;
+DROP TABLE IF EXISTS GeneratedIds;
+CREATE TABLE GeneratedIds
+(
+	Id INT(64) UNSIGNED NOT NULL AUTO_INCREMENT,
+	InsertedTS timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+	GeneratedId varchar(8) NOT NULL,
+
+	KEY (Id)
+);
+ALTER TABLE GeneratedIds ADD CONSTRAINT PK_Id PRIMARY KEY(Id);
