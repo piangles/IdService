@@ -2,8 +2,8 @@ package org.piangles.backbone.services.id;
 
 import java.util.UUID;
 
-import com.TBD.backbone.services.Tier2ServiceLocator;
-import com.TBD.backbone.services.logging.LoggingService;
+import org.piangles.backbone.services.Tier2ServiceLocator;
+import org.piangles.backbone.services.logging.LoggingService;
 
 public class IdServiceImpl implements IdService
 {
