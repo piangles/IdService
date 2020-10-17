@@ -1,6 +1,6 @@
 #!/bin/bash
 
-JAR_FILE=app-id.jar
+JAR_FILE=IdService.jar
 PROCESS_NAME=IdService
 
 function printUsage {

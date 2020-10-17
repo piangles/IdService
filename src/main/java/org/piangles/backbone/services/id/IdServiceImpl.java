@@ -2,12 +2,12 @@ package org.piangles.backbone.services.id;
 
 import java.util.UUID;
 
-import org.piangles.backbone.services.Tier2ServiceLocator;
+import org.piangles.backbone.services.Locator;
 import org.piangles.backbone.services.logging.LoggingService;
 
 public class IdServiceImpl implements IdService
 {
-	private LoggingService logger = Tier2ServiceLocator.getInstance().getLoggingService();
+	private LoggingService logger = Locator.getInstance().getLoggingService();
 
 	public IdServiceImpl()
 	{
@@ -15,9 +15,11 @@ public class IdServiceImpl implements IdService
 	}
 	
 	@Override
-	public String getNextIdentifier(String idType) throws IdException
+	public Identifier getNextIdentifier(String idType) throws IdException
 	{
-		String id = UUID.randomUUID().toString();
-		return id.substring(0, id.indexOf('-'));
+		String uuId = UUID.randomUUID().toString();
+		String id = uuId.substring(0, uuId.indexOf('-'));
+		logger.info("Generating new Id for " + idType + " :" + id);
+		return new Identifier(id, System.currentTimeMillis());
 	}
 }
