@@ -96,7 +96,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>org.piangles.backbone.services.prefs.IdServiceContainer</mainClass>
+							<mainClass>org.piangles.backbone.services.id.IdServiceContainer</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
