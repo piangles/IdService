@@ -22,7 +22,7 @@ public class IdServiceContainer extends AbstractContainer
 
 	public IdServiceContainer()
 	{
-		super("IdService");
+		super(IdService.NAME);
 	}
 	
 	@Override
