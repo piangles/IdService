@@ -11,7 +11,7 @@ public class IdServiceContainer extends AbstractContainer
 		IdServiceContainer container = new IdServiceContainer();
 		try
 		{
-			container.performSteps();
+			container.performSteps(args);
 		}
 		catch (ContainerException e)
 		{
