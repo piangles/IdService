@@ -32,7 +32,8 @@ public class IdGenerationTest
 		 * e20c1329 (8) 
 		 */
 		System.out.println(id);
-		System.out.println(id.substring(0, id.indexOf('-')));		
+		System.out.println(id.substring(0, id.indexOf('-')));
+		System.out.println(id.substring(0, id.lastIndexOf('-')));
 	}
 
 }
