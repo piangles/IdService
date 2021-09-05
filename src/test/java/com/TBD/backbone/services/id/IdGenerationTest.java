@@ -26,7 +26,8 @@ public class IdGenerationTest
 
 	public static void main(String[] args)
 	{
-		String id = UUID.randomUUID().toString();
+		String id = null;
+		id = UUID.randomUUID().toString();
 		/**
 		 * e20c1329-7d47-44a6-8a3d-37f8e2f595c6
 		 * e20c1329 (8) 
@@ -34,6 +35,10 @@ public class IdGenerationTest
 		System.out.println(id);
 		System.out.println(id.substring(0, id.indexOf('-')));
 		System.out.println(id.substring(0, id.lastIndexOf('-')));
+		
+		id = UUID.randomUUID().toString().replace("-", "");
+		System.out.println(id);
+		System.out.println(id.substring(0, 5));
 	}
 
 }
