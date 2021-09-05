@@ -92,7 +92,7 @@ public class IdServiceImpl implements IdService
 	{
 		Identifier id = null;
 
-		int attempt = 0;
+		int attempt = 1;
 		for (int i=0; i < length; ++i)
 		{
 			String uuidAsStr = UUID.randomUUID().toString().replace("-", "");;
