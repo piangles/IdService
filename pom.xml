@@ -24,12 +24,12 @@
 		<dependency>
 			<groupId>org.piangles.backbone.services</groupId>
 			<artifactId>BackboneServices</artifactId>
-			<version>0.4</version>
+			<version>0.6</version>
 		</dependency>
 		<dependency>
 			<groupId>org.piangles.backbone.services</groupId>
 			<artifactId>BackboneServicesLocator</artifactId>
-			<version>0.5</version>
+			<version>0.7</version>
 		</dependency>
 
 		<dependency>

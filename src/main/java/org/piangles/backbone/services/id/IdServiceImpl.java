@@ -19,8 +19,10 @@
  
 package org.piangles.backbone.services.id;
 
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
@@ -81,7 +83,25 @@ public class IdServiceImpl implements IdService
 		}
 		return generateIdAndPersist(idType, idTypeLengthMap.get(idType));
 	}
-	
+
+	@Override
+	public List<Identifier> getIdentifiers(String idType, int count) throws IdException
+	{
+		List<Identifier> identifiers = new ArrayList<>();
+		if (!idTypeLengthMap.containsKey(idType))
+		{
+			throw new IdException("Unrecognized IdType : " + idType);	
+		}
+		
+		Identifier id = null;
+		for (int i=0; i < count; ++i)
+		{
+			id = generateIdAndPersist(idType, idTypeLengthMap.get(idType));
+			identifiers.add(id);
+		}
+		return identifiers;
+	}
+
 	/**
 	 * Sample UUID : dda0704d-7072-4081-9e97-d39e2e2dbfd1
 	 * 
