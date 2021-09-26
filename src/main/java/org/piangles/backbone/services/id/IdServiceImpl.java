@@ -33,6 +33,7 @@ import org.piangles.backbone.services.id.dao.IdDAO;
 import org.piangles.backbone.services.id.dao.IdDAOImpl;
 import org.piangles.backbone.services.logging.LoggingService;
 import org.piangles.core.dao.DAOException;
+import org.piangles.core.expt.ValidationException;
 import org.piangles.core.util.abstractions.ConfigProvider;
 
 public class IdServiceImpl implements IdService
@@ -79,7 +80,7 @@ public class IdServiceImpl implements IdService
 	{
 		if (!idTypeLengthMap.containsKey(idType))
 		{
-			throw new IdException("Unrecognized IdType : " + idType);	
+			throw new ValidationException("Unrecognized IdType : " + idType);	
 		}
 		return generateIdAndPersist(idType, idTypeLengthMap.get(idType));
 	}
@@ -90,7 +91,7 @@ public class IdServiceImpl implements IdService
 		List<Identifier> identifiers = new ArrayList<>();
 		if (!idTypeLengthMap.containsKey(idType))
 		{
-			throw new IdException("Unrecognized IdType : " + idType);	
+			throw new ValidationException("Unrecognized IdType : " + idType);	
 		}
 		
 		Identifier id = null;
