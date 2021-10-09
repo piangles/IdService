@@ -130,16 +130,17 @@ public class IdServiceImpl implements IdService
 			}
 			catch (DAOException e)
 			{
-				logger.error("DAOException: " + e.getMessage(), e);
-				throw new IdException(e.getMessage(), e);
+				String message = "Unable to generateIdAndPersist for IdType: " + idType;
+				logger.error(message + ". Reason: " + e.getMessage(), e);
+				throw new IdException(message);
 			}
 		}
 		
 		if (id == null)
 		{
-			String message = "Unable to generate an unique Id in " + length + " attempts. Consider larger length for IdType: " + idType + ".";
-			logger.error(message);
-			throw new IdException(message);
+			logger.error("Unable to generate an unique Id in " + length + " attempts. Consider larger length for IdType: " + idType + ".");
+			
+			throw new IdException("Unable to generate an unique Id for IdType: " + idType);
 		}
 		
 		logger.info("Generating new Id for " + idType + ":" + id.getValue() + " in " + attempt + " attempts.");
