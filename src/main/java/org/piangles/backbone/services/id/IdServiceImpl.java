@@ -40,7 +40,7 @@ public class IdServiceImpl implements IdService
 {
 	private static final String SERVICE_COMPONENT_ID = "630a792c-448d-495a-9f5e-6ed8070c6b42";
 	private static final String DAO_COMPONENT_ID = "e38b40ff-5555-4cac-8ecf-b3491969beaa";
-	private static final String ID_TYPE = "IdType:";
+	private static final String ID_TYPE = "IdType-";
 	
 	private LoggingService logger = Locator.getInstance().getLoggingService();
 
