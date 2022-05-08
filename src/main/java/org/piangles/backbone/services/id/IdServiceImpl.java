@@ -70,7 +70,10 @@ public class IdServiceImpl implements IdService
 			String key = (String)keys.nextElement();
 			if (key.startsWith(ID_TYPE))
 			{
-				idTypeLengthMap.put(key.substring(ID_TYPE.length()), Integer.valueOf(props.getProperty(key)));				
+				String idType = key.substring(ID_TYPE.length());
+				int idLength = Integer.valueOf(props.getProperty(key));
+				logger.info("Configured IdType: " + idType + " with idLength: " + idLength);
+				idTypeLengthMap.put(idType, idLength);
 			}
 		}
 	}
